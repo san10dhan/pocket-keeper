@@ -50,7 +50,7 @@ test.describe('Pocket-Keeper authentication', () => {
     await page.goto('/login');
 
     await page.getByLabel('Email address').fill('admin@pocketkeeper.demo');
-    await page.getByLabel('Password').fill('Admin123!');
+    await page.getByLabel('Password').fill('Admin@123!test');
 
     await page.getByRole('button', { name: 'Sign in' }).click();
 
@@ -64,14 +64,14 @@ test.describe('Pocket-Keeper authentication', () => {
 
     await expect(page.getByLabel('Email address')).toHaveValue('admin@pocketkeeper.demo');
 
-    await expect(page.getByLabel('Password')).toHaveValue('Admin123!');
+    await expect(page.getByLabel('Password')).toHaveValue('Admin@123!test');
   });
 
   test('preserves a safe return URL after login', async ({ page }) => {
     await page.goto('/login?returnUrl=%2Fbelongings');
 
     await page.getByLabel('Email address').fill('admin@pocketkeeper.demo');
-    await page.getByLabel('Password').fill('Admin123!');
+    await page.getByLabel('Password').fill('Admin@123!test');
 
     await page.getByRole('button', { name: 'Sign in' }).click();
 
@@ -82,7 +82,7 @@ test.describe('Pocket-Keeper authentication', () => {
     await page.goto('/login?returnUrl=https%3A%2F%2Fexample.com');
 
     await page.getByLabel('Email address').fill('admin@pocketkeeper.demo');
-    await page.getByLabel('Password').fill('Admin123!');
+    await page.getByLabel('Password').fill('Admin@123!test');
 
     await page.getByRole('button', { name: 'Sign in' }).click();
 

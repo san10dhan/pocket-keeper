@@ -255,17 +255,17 @@ export class Login {
     {
       role: 'Admin',
       email: 'admin@pocketkeeper.demo',
-      password: 'Admin123!',
+      password: 'Admin@123!test',
     },
     {
       role: 'Member',
       email: 'member@pocketkeeper.demo',
-      password: 'Member123!',
+      password: 'Member@123!test',
     },
     {
       role: 'Viewer',
       email: 'viewer@pocketkeeper.demo',
-      password: 'Viewer123!',
+      password: 'Viewer@123!test',
     },
   ];
 

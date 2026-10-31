@@ -27,7 +27,7 @@ describe('AuthService', () => {
   it('logs in with valid demo credentials', () => {
     const result = service.login({
       email: 'admin@pocketkeeper.demo',
-      password: 'Admin123!',
+      password: 'Admin@123!test',
     });
 
     expect(result).toBe(true);
@@ -48,7 +48,7 @@ describe('AuthService', () => {
   it('normalizes email casing and surrounding whitespace', () => {
     const result = service.login({
       email: '  ADMIN@POCKETKEEPER.DEMO  ',
-      password: 'Admin123!',
+      password: 'Admin@123!test',
     });
 
     expect(result).toBe(true);
@@ -58,7 +58,7 @@ describe('AuthService', () => {
   it('persists a successful session', () => {
     service.login({
       email: 'member@pocketkeeper.demo',
-      password: 'Member123!',
+      password: 'Member@123!test',
     });
 
     expect(localStorage.getItem('pocket-keeper-session')).not.toBeNull();
@@ -67,7 +67,7 @@ describe('AuthService', () => {
   it('clears the session when logging out', () => {
     service.login({
       email: 'member@pocketkeeper.demo',
-      password: 'Member123!',
+      password: 'Member@123!test',
     });
 
     service.logout();

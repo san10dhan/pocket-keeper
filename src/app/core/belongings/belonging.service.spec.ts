@@ -32,7 +32,7 @@ describe('BelongingsService', () => {
   function loginAsMember(): void {
     auth.login({
       email: 'member@pocketkeeper.demo',
-      password: 'Member123!',
+      password: 'Member@123!test',
     });
   }
 
@@ -81,7 +81,7 @@ describe('BelongingsService', () => {
   it('does not allow a viewer to create belongings', () => {
     auth.login({
       email: 'viewer@pocketkeeper.demo',
-      password: 'Viewer123!',
+      password: 'Viewer@123!test',
     });
 
     expect(() => service.create(sample)).toThrow();
@@ -90,7 +90,7 @@ describe('BelongingsService', () => {
   it('does not allow a member to update another user’s belonging', () => {
     auth.login({
       email: 'admin@pocketkeeper.demo',
-      password: 'Admin123!',
+      password: 'Admin@123!test',
     });
 
     const created = service.create(sample);
@@ -110,7 +110,7 @@ describe('BelongingsService', () => {
   it('filters belongings by owner for non-admin users', () => {
     auth.login({
       email: 'admin@pocketkeeper.demo',
-      password: 'Admin123!',
+      password: 'Admin@123!test',
     });
 
     service.create(sample);
